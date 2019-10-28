@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic TWAIN Direct Task Generator</title>
+    <meta charset="utf-8">
+	<meta name="google-site-verification" content="lOMRewguX8wGhxPDXXgOeJGI--uZcDgyN_lxoszyKUU" />
+    <link href="css/dynamsoft/prettify.css?v=20190112" rel="stylesheet" />
+    <link href="css/dynamsoft/comm.css?v=20190112" rel="stylesheet" />
+    <link href="css/dynamsoft/basic_generator.css?v=20190112" rel="stylesheet" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css?v=20190112" />
+
+    <!-- Social buttons -->
+    <link rel="stylesheet" href="css/bootstrap-social.min.css?v=20190112" />
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="css/index.css?v=20190112" />
+    <link rel="stylesheet" href="css/dynamsoft/dynamsoft_core2.css?v=20190112" />
+	
+</head>
+<body>
+	<form method="post" action="/api/imageBlock" enctype="multipart/form-data">
+		<div id="divLoginError" class="dwt-login-error">&nbsp;</div>
+		<div>
+			<span>msg</span>
+			<input name="msg" type="text" class="dwt-login-name" AUTOCOMPLETE="off" />
+		</div>
+		<div>
+			<span>File</span>
+			<input name="file" type='file' class="dwt-login-name" />
+		</div>
+		<div><input type="submit" value="submit" class="dwt-login-button" /></div>
+	</form>
+</body>
+</html>

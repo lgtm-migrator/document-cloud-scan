@@ -1,0 +1,81 @@
+﻿var EnumSource = {
+    'feeder': 0,
+    'feederFront': 1,
+    'feederRear': 2,
+    'flatbed': 3,
+    'adf': 4,
+    'any': 5
+};
+
+var EnumImgType = {
+    'bw1': 0,
+    'gray8': 1,
+    'gray16': 2,
+    'rgb24': 3,
+    'rgb48': 4
+};
+
+var EnumResolution = {
+    'closest': 0,
+    'closestGreaterThan': 1,
+    'closestLessThan': 2,
+    'maximum': 3,
+    'minimum': 4,
+    'optical': 5,
+    'preview': 6
+};
+
+var EnumPageSize = {
+    'din4A0': 0,
+    'din2A0': 1,
+    'isoA0': 2,
+    'isoA1': 3,
+    'isoA2': 4,
+    'isoA3': 5,
+    'isoA4': 6,
+    'isoA5': 7,
+    'isoA6': 8,
+    'isoA7': 9,
+    'isoA8': 10,
+    'isoA9': 11,
+    'isoA10': 12,
+    'isoB0': 13,
+    'isoB1': 14,
+    'isoB2': 15,
+    'isoB3': 16,
+    'isoB4': 17,
+    'isoB5': 18,
+    'isoB6': 19,
+    'isoB7': 20,
+    'isoB8': 21,
+    'isoB9': 22,
+    'isoB10': 23,
+    'isoC0': 24,
+    'isoC1': 25,
+    'isoC2': 26,
+    'isoC3': 27,
+    'isoC4': 28,
+    'isoC5': 29,
+    'isoC6': 30,
+    'isoC7': 31,
+    'isoC8': 32,
+    'isoC9': 33,
+    'isoC10': 34,
+    'jisB0': 35,
+    'jisB1': 36,
+    'jisB2': 37,
+    'jisB3': 38,
+    'jisB4': 39,
+    'jisB5': 40,
+    'jisB6': 41,
+    'jisB7': 42,
+    'jisB8': 43,
+    'jisB9': 44,
+    'jisB10': 45,
+    'usBusinessCard': 46,
+    'usExecutive': 47,
+    'usLedger': 48,
+    'usLegal': 49,
+    'usLetter': 50,
+    'usStatement': 51
+};

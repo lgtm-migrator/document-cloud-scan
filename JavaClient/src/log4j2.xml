@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="off">
+	<Properties>
+		<!--
+			%d date time
+			%t
+			%-6p
+			%c{x}
+			%m message
+			%n new line
+		-->
+		<Property name="lineformat1">%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-6p %c{1}.%M %m%n</Property>
+		<Property name="filename">TwainDirect${sys:appid:-}.log</Property>
+		<Property name="logfile-archive">TwainDirect${sys:appid:-}_%d{yyyy-MM-dd}-%i.log</Property>
+	</Properties>
+	<Appenders>
+		<Console name="consoleAppender" target="SYSTEM_OUT">
+			<PatternLayout>
+				<pattern>${lineformat1}</pattern>
+			</PatternLayout>
+		</Console>
+
+		<RollingFile name="fileAppender" fileName="${filename}"
+			 append="true" filePattern="${logfile-archive}">
+			<PatternLayout>
+				<pattern>${lineformat1}</pattern>
+			</PatternLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="10MB"/>
+			</Policies>
+			<DefaultRolloverStrategy max="20"/>
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Root level="info">
+			<AppenderRef ref="consoleAppender"/>
+			<AppenderRef ref="fileAppender"/>
+		</Root>
+		<Logger name="javax.jmdns" level="info" additivity="false">
+			<AppenderRef ref="fileAppender"/>
+		</Logger>
+	</Loggers>
+</Configuration>

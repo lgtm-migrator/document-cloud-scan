@@ -1,0 +1,188 @@
+﻿
+#divPageWrapper {
+    width: 980px;
+}
+/*action config*/
+#divActionConfig {
+}
+
+#divActionConfig input[type=text],
+#divActionConfig select{
+    height: 30px;
+    padding-left: 5px;
+    font-size: 14px;
+    color: #606060;
+
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+}
+
+.mac-os #divActionConfig input[type=text] {
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+
+    border: solid 1px #ccc;
+}
+
+.fit-cell-width {
+    width: 1%;
+    white-space: nowrap;
+}
+
+.div-horizon-separator {
+    width: 100%;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.div-action-option {
+    width: 100%;
+    padding: 15px 25px 5px 25px;
+}
+
+.div-action-option > .display-as-table-cell {
+    vertical-align: middle;
+}
+
+.numb-int-validation {
+    width: 80px;
+}
+
+#divCropOption table td {
+    padding-top: 15px;
+    padding-right: 10px;
+}
+
+#divCropOption table td.td-another-prop {
+    padding-left: 15px;
+}
+
+#sltSource {
+    width: 200px;
+}
+
+#sltImageType {
+    width: 166px;
+}
+
+#tbResolution {
+    width: 87px;
+}
+
+#sltResolution {
+    width: 142px;
+}
+
+#sltPageSize {
+    width: 260px;
+}
+
+#divCropOption table td input {
+    width: 84px;
+}
+
+#divResolutionOption span,
+#divResolutionOption #divResolutionDesc,
+#divCropOption table td span,
+#divImgProcessOption label {
+    font-size: 14px;
+    color: #606060;
+}
+
+#divResolutionOption #divResolutionDesc {
+    position: relative;
+    float: right;
+    top: 12px;
+    width: 550px;
+}
+
+#divResolutionOption #divResolutionDesc img {
+    position: absolute;
+    left: -20px;
+    top: 1px;
+}
+
+#divImgProcessOption > div {
+    margin-bottom: 15px;
+}
+
+#divImgProcessOption label {
+    margin-right: 10px;
+}
+
+#divImgProcessOption input[type=checkbox] {
+    margin: 0;
+}
+
+#divImgProcessOption span {
+    position: relative;
+    bottom: 2px;
+}
+
+.mac-os #divImgProcessOption span {
+    bottom: 1px;
+}
+
+#divOp {
+    text-align: center;
+    padding: 25px 0;
+}
+
+#btnGenerateBasic {
+    width: 122px;
+    height: 36px;
+    line-height: 30px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    background-color: #fe8e14;
+    border: solid 2px #fe8e14;
+    font-size: 14px;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+}
+
+.div-tool-tip {
+    display: inline-block;
+}
+
+[data-tip]:before {
+    content:'';
+	/* hides the tooltip when not hovered */
+	display:none;
+	content:'';
+	position:absolute;
+	z-index:8;
+	font-size:0;
+	line-height:0;
+
+    width:8px; 
+    height:8px; 
+    border-top:solid 1px #cccccc; 
+    border-left:solid 1px #cccccc; 
+    background:#f5f5f5; 
+    -moz-transform: rotate(45deg); 
+    -webkit-transform: rotate(45deg); 
+    -o-transform: rotate(45deg); 
+    -ms-transform: rotate(45deg); transform: rotate(45deg);
+
+    left: 45px;
+    top: 33px;
+}
+
+[data-tip]:after {
+    background:#f5f5f5;
+    border: 1px solid #cccccc;
+    color: #444444;
+    width: 240px;
+    white-space:normal !important;
+    left: -75px;
+    line-height: 150%;
+    z-index: 7;
+    top:38px;
+}

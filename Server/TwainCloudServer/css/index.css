@@ -1,0 +1,80 @@
+/* Sticky footer styles */
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    margin-bottom: 60px; /* Margin bottom by footer height */
+}
+
+/* Custom page styles */
+.navbar-brand {
+    margin-left: 16px;
+}
+
+.loginButton {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.profile-content {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.hidden {
+  display:none;
+}
+
+.dynamsoft-logo img {
+	margin-left: 5px;
+	height: 25px;
+	line-height: 25px;
+}
+
+.btn:disabled {
+	color: #CCCCCC;
+	border: #CCCCCC 1px solid;
+}
+
+#unauthorizedProfileItems {
+	padding-top: 45px;
+}
+
+.dwt-login-content {
+	padding: 40px 0px 0px 20px;
+	margin: 0;
+}
+
+.dwt-login-content div {
+	padding: 5px 0;
+	margin: 0;
+}
+
+.dwt-login-content span {
+	display:inline-block;
+	font-size: 16px;
+	width: 120px;
+	padding: 0 10px;
+	text-align:right;
+}
+
+.dwt-login-name, .dwt-login-password {
+	border: #CCCCCC 1px solid;
+	width: 200px
+}
+
+.dwt-login-error {
+	color: red;
+}
+
+.dwt-login-button {
+	border: #CCCCCC 1px solid;
+	margin-top: 15px;
+	margin-left: 200px;
+	text-align: center;
+	display: inline-block;
+	font-size: 14px;
+	width: 120px;
+	height: 30px;
+}

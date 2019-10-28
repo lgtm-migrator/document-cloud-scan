@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic TWAIN Direct Task Generator</title>
+    <link href="css/dynamsoft/prettify.css?v=20190112" rel="stylesheet" />
+    <link href="css/dynamsoft/comm.css?v=20190112" rel="stylesheet" />
+    <link href="css/dynamsoft/basic_generator.css?v=20190112" rel="stylesheet" />
+</head>
+<body>
+	<div class="container">
+		<div class="ct-top"> <span class="title">Twain Direct Scanning</span></div>
+	
+		<div class="ViewerWrapper">
+			<div class="dwtViewer"></div>
+
+		</div>
+
+		<div class="ScanWrapper">
+
+            <div id="divActionConfig">
+                <div class="div-action-options">
+
+                    <div class="div-action-option">
+                        <span>Select Source:</span>
+						<select size="1" id="tbSource" style="width:260px"></select>
+                    </div>
+                    <div class="div-action-option controlgroup">
+                        <span>Pixel Type:</span>
+					
+						<input id="rdBW" name="rdPixelType" type="radio" value="bw1" checked="checked" /> <label for="rdBW">B&W</label>
+						<input id="rdGray" name="rdPixelType" type="radio" value="gray8" /> <label for="rdGray">Gray</label>
+						<input id="rdColor" name="rdPixelType" type="radio" value="rgb24" /> <label for="rdColor">Color</label>
+                        
+                    </div>
+                    <div id="divResolutionOption" class="div-action-option">
+                        <span>Resolution:</span>
+						<select size="1" id="tbResolution">
+							<option value="100">100</option>
+							<option value="200">200</option>
+							<option value="300">300</option>
+							<option value="600">600</option>
+						</select>
+                    </div>
+                    <div id="divImgProcessOption" class="div-action-option div-img-processing">
+
+                        <div>
+							<span> Source Option: </span>
+                            <input id="rdNone" name="rdSource" type="radio" value="" checked="checked" /> <label for="rdNone">(empty)</label>
+                            <input id="rdFeeder" name="rdSource" type="radio" value="feeder" /> <label for="rdFeeder">Auto-feeder</label>
+                            <input id="rdADF" name="rdSource" type="radio" value="adf" /> <label for="rdADF">ADF</label>
+                        </div>
+						
+                        <div>
+							
+							<span>Image Processing: </span>
+							<div>
+								<label id="lblCropping">
+									<input id="chkCropping" type="checkbox"/> <span>Auto-crop</span>
+								</label>
+
+								<label id="lblAutomaticDeskew" style="margin-left:20px">
+									<input id="chkAutomaticDeskew" type="checkbox"/> <span>De-skew</span>
+								</label>
+
+							</div>
+							<div>
+								<label id="lblRotation">
+									<input id="chkRotation" type="checkbox"/> <span>Auto-rotation</span>
+								</label>
+
+								<label id="lblDiscardBlankImages">
+									<input id="chkDiscardBlankImages" type="checkbox"/> <span>Discard Blank Images</span>
+								</label>
+							</div>
+						</div>
+                    </div>
+
+                    <div class="div-horizon-separator"></div>
+                </div>
+
+                <div id="divOp">
+                    <input type="button" id="btnClearBasic" value="Reset"/>
+                    <input type="button" id="btnGenerateBasic" value="Scan"/>
+                </div>
+				
+            </div>
+
+		</div>
+			
+		<div class="footer">
+			<div>&copy; 2003-<span id="copyRightCurYear">2019</span> Dynamsoft. All rights reserved.</div>
+		</div>
+	</div>
+
+	<script src="app/jquery-3.2.1.min.js?v=20190112"></script>
+	<script src="app/prettify.js?v=20190112"></script>
+	<script src="app/dynamsoft/attr_value_range.js?v=20190112"></script>
+	<script src="app/dynamsoft/ult.js?v=20190112"></script>
+	<script src="app/dynamsoft/generator.js?v=20190112"></script>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic TWAIN Direct Task Generator</title>
+    <meta charset="utf-8">
+	<meta name="google-site-verification" content="lOMRewguX8wGhxPDXXgOeJGI--uZcDgyN_lxoszyKUU" />
+    <link href="css/dynamsoft/prettify.css?v=20190112" rel="stylesheet" />
+    <link href="css/dynamsoft/comm.css?v=20190112" rel="stylesheet" />
+    <link href="css/dynamsoft/basic_generator.css?v=20190112" rel="stylesheet" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css?v=20190112" />
+
+    <!-- Social buttons -->
+    <link rel="stylesheet" href="css/bootstrap-social.min.css?v=20190112" />
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="css/index.css?v=20190112" />
+    <link rel="stylesheet" href="css/dynamsoft/dynamsoft_core2.css?v=20190112" />
+	
+</head>
+<body>
+	<style type="text/css">
+		.mask {
+			position: absolute;
+			top: 0px;
+			filter: alpha(opacity=60);
+			background-color: #777;
+			z-index: 1002;
+			left: 0px;
+			opacity: 0.5;
+			-moz-opacity: 0.5;
+		}
+	</style>
+	<div class="container">
+		<div class="ct-top">
+
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<img src="images/logo.png" class="d-inline-block align-top" height="40" />
+				<a class="navbar-brand" href="#">TWAIN Cloud <small><sup>(v1.1)</sup></small></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active">
+							<a id="gotoHome" class="nav-link" href="#">Home</a>
+						</li>
+						<li class="nav-item active">
+							<a id="gotoScanners" class="nav-link" href="#">Scanners</a>
+						</li>
+						<li class="nav-item" id="authorizedProfileItems">
+							<a id="logout" class="nav-link" href="#">Sign Out</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+
+		<div class="ViewerWrapper">
+			<div class="ViewerContainer">
+				<canvas id="the-canvas" class="dwtViewer" style="border:0"></canvas>
+			</div>
+			<div class="ViewerScroll">
+				<div id="dwtScroll" style="height: 60px;width: 14px;background-color:rgba(148, 148, 148, 1);box-shadow:inset 0 0 6px rgba(0,0,0,.3);border-radius:10px;position:absolute;"></div>
+			</div>
+		</div>
+		<div class="ScanWrapper">
+
+			<div id="divActionConfig">
+				<div class="div-action-options">
+
+					<div class="div-action-option">
+						<span>Select Source: (<a id="refreshScanners" href="#" style="color:blue">Refresh</a>)</span>
+						<select size="1" id="tbSource" style="width:345px"></select>
+					</div>
+					<div class="div-action-option controlgroup">
+						<span>Pixel Type:</span>
+
+						<input id="rdColor" name="rdPixelType" type="radio" value="rgb24" /> <label for="rdColor">Color</label>
+						<input id="rdGray" name="rdPixelType" type="radio" value="gray8" /> <label for="rdGray">Gray</label>
+						<input id="rdBW" name="rdPixelType" type="radio" value="bw1" checked="checked" /> <label for="rdBW">B&W</label>
+
+					</div>
+					<div id="divResolutionOption" class="div-action-option">
+						<span>Resolution:</span>
+						<select size="1" id="tbResolution">
+							<option value="100">100</option>
+							<option value="200">200</option>
+							<option value="300">300</option>
+							<option value="600">600</option>
+						</select>
+					</div>
+					<div id="divImgProcessOption" class="div-action-option div-img-processing">
+
+						<div style='display:none'>
+							<span> Source Option: </span>
+							<input id="rdNone" name="rdSource" type="radio" value="any" checked="checked" /> <label for="rdNone">(any)</label>
+							<input id="rdFeeder1" name="rdSource" type="radio" value="feeder" /> <label for="rdFeeder1">AutoFeeder</label>
+							<input id="rdDuplex1" name="rdSource" type="radio" value="duplex" /> <label for="rdDuplex1">Duplex</label>
+						</div>
+
+						<div>
+
+							<span>Image Processing: </span>
+							<div>
+
+								<label id="lblAutomaticDeskew" style="margin-left:20px">
+									<input id="chkAutomaticDeskew" type="checkbox" /> <span>De-skew</span>
+								</label>
+
+								<label id="lblDiscardBlankImages">
+									<input id="chkDiscardBlankImages" type="checkbox" /> <span>Discard Blank Images</span>
+								</label>
+							</div>
+							<div>
+
+								<label id="lblAutoFeeder" style="margin-left:20px">
+									<input id="rdFeeder" type="checkbox" /> <span>AutoFeeder</span>
+								</label>
+
+								<label id="lblDuplex">
+									<input id="rdDuplex" type="checkbox" /> <span>Duplex</span>
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="div-horizon-separator"></div>
+				</div>
+
+				<div id="divOp">
+					<input type="button" id="btnScan" value="Scan" />
+					<input type="button" id="btnRemove" value="Delete" />
+				</div>
+
+			</div>
+
+		</div>
+
+		<footer class="footer">
+			<div class="footerContainer">
+				<div>&copy; 2003-<span id="copyRightCurYear">2019</span> Dynamsoft. All rights reserved.</div>
+			</div>
+		</footer>
+	</div>
+	<div>
+		<div id="dwtLogin" class="dwt-login-content">
+			<form id="frmLogin" method="post">
+				<div id="divLoginError" class="dwt-login-error">&nbsp;</div>
+				<div>
+					<span>Name</span>
+					<input name="name" type="text" class="dwt-login-name" AUTOCOMPLETE="off" />
+				</div>
+				<div>
+					<span>Password</span>
+					<input name="password" type='password' autocomplete="new-password" style="background-color: #FFFFFF!important;" readonly onfocus="this.removeAttribute('readonly');" onblur="this.setAttribute('readonly',true);" class="dwt-login-password" />
+				</div>
+				<div><input id="btnTCLogin" type="button" value="Login" class="dwt-login-button" /></div>
+			</form>
+
+		</div>
+
+		<div id="unauthorizedProfileItems" class="profile-content" style="display: none;">
+			<p>Sign In with social providers:</p>
+			<div class="loginButton"><a id="googleLogin" href="#" class="btn btn-block btn-social btn-google"><i class="fa fa-google"></i>Sign in with Google</a></div>
+			<div class="loginButton"><a id="facebookLogin" href="#" class="btn btn-block btn-social btn-facebook"><i class="fa fa-facebook"></i>Sign in with Facebook</a></div>
+		</div>
+	</div>
+
+	<div id="mask" class="mask"></div>
+	<div id="testImg"></div>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="app/jquery-3.2.1.min.js?v=20191012"></script>
+	<script src="app/popper.min.js?v=20191012"></script>
+	<script src="app/bootstrap.min.js?v=20191012"></script>
+	<script src="app/dynamsoft/dynamsoft_core2.min.js?v=20191012"></script>
+	<script src="app/dynamsoft/dynamsoft_core2_ui.min.js?v=20191012"></script>
+	<script src="app/dynamsoft/dynamsoft_dialog.js?v=20191012"></script>
+	<script src="app/dynamsoft/dynamsoft_scroll.js?v=20191012"></script>
+
+	<!-- MQTT Client library
+	< script src="app/mqtt.min.js?v=20191012" > < / script >
+	-->
+	<!-- PDF library-->
+	<script src="app/pdf.js?v=20191012"></script>
+	<script>
+		pdfjsLib.GlobalWorkerOptions.workerSrc = 'app/pdf.worker.js';
+	</script>
+
+	<!-- Application scripts -->
+	<script src="app/twain.js?v=20191012"></script>
+	<script src="app/common.js?v=20191012"></script>
+	<script src="app/index.js?v=20191012"></script>
+
+	<script src="app/prettify.js?v=20191012"></script>
+	<script src="app/dynamsoft/attr_value_range.js?v=20191012"></script>
+	<script src="app/dynamsoft/ult.js?v=20191012"></script>
+	<script src="app/dynamsoft/generator.js?v=20191012"></script>
+
+
+</body>
+</html>
