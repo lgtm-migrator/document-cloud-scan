@@ -13,10 +13,8 @@ namespace TwainCloudServer
 		{
 			var resources = new List<DbUser>
 			{
-				new DbUser { name = "lincoln", password="1" ,email=""},
-				new DbUser { name = "a2", password="1" ,email=""},
-				new DbUser { name = "a3", password="1" ,email=""}
-			};
+				new DbUser { name = "dynamsoft", password="1" ,email="support@dynamsoft.com"},
+            };
 
 			resources.ForEach(s => context.DbUsers.Add(s));
 			context.SaveChanges();

@@ -8,7 +8,7 @@ import java.io.InputStream;
 
 public abstract class Common
 {
-    public static final int DWT_MainVer = 12; // DWT12.1 or DWT15.2 
+    public static final int DWT_MainVer = 15; // DWT12.1 or DWT15.2 
     
     public static final String DWT_UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36";
 	public static final boolean bSSL = false;
@@ -17,7 +17,7 @@ public abstract class Common
     public static final String DWT_Port = Common.getDWT_port();
     public static final String DWT_Version = "dwt_trial_15200924";
     public static final String DWT_WS_Command = "dwt_command";
-    public static final String DWT_ProductKey = ""; // <--- MUST CHANGE IT ----- (DWT Product Key) !!!
+    public static final String DWT_ProductKey = "LICENSE-KEY"; // <--- MUST CHANGE IT ----- (DWT Product Key) !!!
     
     public static final String getDWT_port() {
     	if(Common.DWT_MainVer<15)

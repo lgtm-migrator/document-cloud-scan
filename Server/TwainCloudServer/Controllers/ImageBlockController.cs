@@ -24,8 +24,8 @@ namespace TwainCloudServer.Controllers
 				var dbImageBlock = db.DbImageBlocks.FirstOrDefault(evt => (evt.blockId == blockId));
 				if (null != dbImageBlock) {
 					context.Response.BinaryWrite(dbImageBlock.data);
-					db.DbImageBlocks.Remove(dbImageBlock);
-					db.SaveChanges();
+					//db.DbImageBlocks.Remove(dbImageBlock);
+					//db.SaveChanges();
 				}
 			}
 

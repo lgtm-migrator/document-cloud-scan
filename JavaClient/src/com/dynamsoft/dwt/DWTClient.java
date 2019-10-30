@@ -451,7 +451,7 @@ public class DWTClient implements WSHandler
     {
         System.out.println("Get Image by index: " + String.valueOf(index));
 		return this.GetImageAsPDF_v12(index);
-    	//	return this.GetImageAsPDF_v15(index);
+    	//return this.GetImageAsPDF_v15(index);
     }
 
     public byte[] GetImageAsPDF_v15(int index)

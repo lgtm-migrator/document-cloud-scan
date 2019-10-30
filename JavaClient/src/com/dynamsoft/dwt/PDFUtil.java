@@ -111,7 +111,7 @@ public class PDFUtil {
         	
         	
     		contents = new PDPageContentStream(doc, page);
-    		contents.drawImage(pdImage, 0, 0);
+    		contents.drawImage(pdImage, 0, 0, 600, 800);
     		contents.close();
 
     		ByteArrayOutputStream output = new ByteArrayOutputStream();
