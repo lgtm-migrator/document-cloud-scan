@@ -178,7 +178,6 @@
     <Content Include="dwt.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="googlef3bedad336367cbe.html" />
     <Content Include="images\dynamsoft_logo.gif" />
     <Content Include="images\icn-info.png" />
     <Content Include="images\logo.png" />
@@ -252,7 +251,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="libman.json" />
-    <Content Include="images\hazybits.pxm" />
     <Content Include="images\twain.pxm" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
@@ -266,6 +264,7 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

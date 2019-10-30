@@ -82,7 +82,7 @@ public class DlgSelectSource extends JFrame implements ICloudCallback {
 		
 		this.tcClient = null;
 		this.tokens = tokens;
-		this.objCancelableDialog = new CancelableDialog(this, "Regist Scanner");
+		this.objCancelableDialog = new CancelableDialog(this, "Register Scanner");
 		
 		this.createUI();
 
@@ -168,7 +168,7 @@ public class DlgSelectSource extends JFrame implements ICloudCallback {
 			}
 		});
 		
-		btnRegist = new JButton("Regist");
+		btnRegist = new JButton("Register");
 		buttonPanel.add(btnRegist);
 		btnRegist.addActionListener(new ActionListener() {
 			
@@ -248,7 +248,7 @@ public class DlgSelectSource extends JFrame implements ICloudCallback {
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
-				JOptionPane.showMessageDialog(null, "Regist scanner successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Succeeded scanner registration.", "Success", JOptionPane.INFORMATION_MESSAGE);
 			}
 		}).start();
 
