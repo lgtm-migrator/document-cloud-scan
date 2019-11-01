@@ -4,7 +4,7 @@
 
 ## Download and Installation
 - [Dynamic Web TWAIN](https://www.dynamsoft.com/Downloads/WebTWAIN_Download.aspx)
-- [Eclise](https://www.eclipse.org/downloads/)
+- [Eclipse](https://www.eclipse.org/downloads/)
 - [ActiveMQ Artemis](http://activemq.apache.org/components/artemis/download/)
 - [Visual Studio](https://visualstudio.microsoft.com/downloads/)
 
